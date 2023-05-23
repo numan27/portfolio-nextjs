@@ -1,0 +1,50 @@
+body {
+   font-family: 'Montserrat', sans-serif;
+ }
+ 
+.section-title h2{
+   font-family: 'Lilita One', cursive !important;
+}
+ 
+h1,
+h2,
+h3,
+h4,
+h5 {
+   font-family: 'Raleway', sans-serif !important;
+}
+.navMenu{
+   background-color: #333333;
+}
+
+.slanted{
+   position: fixed;
+   height: 200%;
+   width: 100%;
+   transform: rotate(15deg);
+   right: -83%;
+   top: -50%;
+}
+.mainImg{
+   position: fixed;
+   top: 30;
+   height: 89%;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.skill_item{
+   border: 12px solid #374151;
+}
+
+
+/*  */
+
+@media screen and (max-width: 993px) {
+   .mainImg{
+     width: 200px !important;
+     height: 200px;
+     /* border-radius: 100px; */
+   }
+}
+
+
+
