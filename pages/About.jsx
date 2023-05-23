@@ -3,26 +3,26 @@ import PageHeading from '@/components/PageHeading';
 import Link from 'next/link';
 import { TiSocialFacebook, TiSocialGithub, TiSocialLinkedin, TiSocialSkype } from "react-icons/ti"
 import { SiFiverr, SiFreelancer, SiUpwork } from "react-icons/si"
-import { BsPlus } from "react-icons/bs"
 import { ImDownload } from "react-icons/im"
-import React from 'react';
+import { MdWork } from "react-icons/md"
 import { AiOutlineLine } from 'react-icons/ai';
 import SkillCircle from '@/components/SkillCircle';
 
 const About = () => {
+  
   return (
     <AppLayout container={true}>
       <PageHeading title={"About"} titleSpan={"me"} backHeading={"Who i am"} />
 
 
       {/* About Section */}
-      <div className='pb-20'>
+      <div className='sm:pb-20 pb-8'>
         <div className='w-full flex lg:flex-row flex-col items-start'>
           <div className='w-full lg:w-1/2'>
             <h2 className='uppercase text-3xl font-bold'>personal info</h2>
             <div className='mt-8'>
               <p className='font-regular text-gray-400 flex items-center my-4'>Name: &nbsp; <span className='text-white'>Numan Khalil</span></p>
-              <p className='font-regular text-gray-400 flex items-center my-4'>WhatsApp/ Mobile: &nbsp; <span className='text-white'>+92-334-495-2763</span></p>
+              <p className='font-regular text-gray-400 flex items-center my-4'>WhatsApp: &nbsp; <span className='text-white'>+92-334-495-2763</span></p>
               <p className='font-regular text-gray-400 flex items-center my-4'>Email: &nbsp; <span className='text-white'>numankhalil27@gmail.com</span></p>
               <p className='font-regular text-gray-400 flex items-center my-4'>Nationality: &nbsp; <span className='text-white'>Pakistani</span></p>
             </div>
@@ -103,10 +103,10 @@ const About = () => {
       </div>
 
       {/* Skills Section */}
-      <div>
+      <div className='sm:pb-16 pb-28'>
         <h2 className='uppercase text-3xl font-bold text-center'>skills and expertise</h2>
 
-        <div className='grid grid-cols-4'>
+        <div className='grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 mt-16 gap-y-16'>
 
           {/* <div className='flex flex-col items-center justify-center'>
             <div className='skill_item hover:border-amber-500 transition-all duration-400 rounded-full w-32 h-32 flex items-center justify-center'>
@@ -115,8 +115,46 @@ const About = () => {
             <h3 className='mt-3'>HTML</h3>
           </div> */}
 
-            <SkillCircle title="HTML" percentage={90}/>
+          <SkillCircle title="HTML" percentage={100} />
+          <SkillCircle title="CSS" percentage={90} />
+          <SkillCircle title="javascript" percentage={80} />
+          <SkillCircle title="jquery" percentage={70} />
+          <SkillCircle title="react js" percentage={85} />
+          <SkillCircle title="next js" percentage={75} />
+          <SkillCircle title="bootstrap" percentage={100} />
+          <SkillCircle title="tailwind css" percentage={95} />
+          <SkillCircle title="material ui" percentage={85} />
         </div>
+      </div>
+
+
+      {/* Resume*/}
+      <div className='sm:pb-32 mt-8 pb-28'>
+        <h2 className='uppercase text-3xl font-bold text-center'>experience & education</h2>
+
+        <div className='mt-16'>
+
+          <div className='md:w-1/2 w-full relative resume_item'>
+            <div>
+              <div className='bg-amber-500 w-14 h-14 rounded-full flex items-center justify-center'>
+                <MdWork className='text-xl' />
+              </div>
+              <div>
+                <h2 className='uppercase font-bold text-center'>education</h2>
+              </div>
+            </div>
+
+            <div>
+              <h2 className='uppercase font-bold text-center'>experience & education</h2>
+            </div>
+          </div>
+
+          <div className='md:w-1/2 w-full'>
+
+          </div>
+
+        </div>
+
       </div>
     </AppLayout>
   );

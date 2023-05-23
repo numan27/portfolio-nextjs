@@ -31,10 +31,17 @@ h5 {
    height: 89%;
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.skill_item{
-   border: 12px solid #374151;
+.skillCircle{
+   transform: rotate(180deg);
 }
-
+.resume_item::after {
+   content: "";
+   position: absolute !important;
+   left: 27px !important;
+   top: 60px !important;
+   border-left: 1px solid #fff !important;
+   height: 100%;
+ }
 
 /*  */
 

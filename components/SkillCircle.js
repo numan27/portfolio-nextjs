@@ -2,8 +2,8 @@ import React from 'react';
 
 const SkillCircle = ({ title, percentage }) => {
   const circleStyle = {
-    width: '100px',
-    height: '100px',
+    width: '125px',
+    height: '125px',
     borderRadius: '50%',
     position: 'relative',
     display: 'flex',
@@ -19,7 +19,7 @@ const SkillCircle = ({ title, percentage }) => {
     width: '100%',
     height: '100%',
     borderRadius: '50%',
-    border: '10px solid gray',
+    border: '12px solid #374151',
   };
 
   const percentageBorderStyle = {
@@ -29,7 +29,7 @@ const SkillCircle = ({ title, percentage }) => {
     width: '100%',
     height: '100%',
     borderRadius: '50%',
-    border: `10px solid yellow`,
+    border: `12px solid #B17816`,
     clipPath: `polygon(0 0, ${percentage}% 0, ${percentage}% 100%, 0 100%)`,
   };
 
@@ -39,17 +39,15 @@ const SkillCircle = ({ title, percentage }) => {
     zIndex: '1',
   };
 
-  const titleStyle = {
-    marginTop: '10px',
-    fontSize: '16px',
-  };
 
   return (
-    <div style={circleStyle}>
-      <div style={borderStyle}></div>
-      <div style={percentageBorderStyle}></div>
-      <div style={percentageStyle}>{percentage}%</div>
-      <div style={titleStyle}>{title}</div>
+    <div className='flex flex-col items-center justify-center'>
+      <div className='sm:w-32 w-28 sm:h-32 h-28 relative flex items-center justify-center' >
+        <div style={borderStyle}></div>
+        <div className='skillCircle' style={percentageBorderStyle}></div>
+        <div style={percentageStyle}>{percentage}%</div>
+      </div>
+      <div className='mt-3 sm:text-xl text-base font-bold uppercase'>{title}</div>
     </div>
   );
 };
