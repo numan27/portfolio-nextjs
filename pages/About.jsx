@@ -4,12 +4,13 @@ import Link from 'next/link';
 import { TiSocialFacebook, TiSocialGithub, TiSocialLinkedin, TiSocialSkype } from "react-icons/ti"
 import { SiFiverr, SiFreelancer, SiUpwork } from "react-icons/si"
 import { ImDownload } from "react-icons/im"
+import ExperienceList from './About/ExperienceList';
 import { MdWork } from "react-icons/md"
 import { AiOutlineLine } from 'react-icons/ai';
 import SkillCircle from '@/components/SkillCircle';
 
 const About = () => {
-  
+
   return (
     <AppLayout container={true}>
       <PageHeading title={"About"} titleSpan={"me"} backHeading={"Who i am"} />
@@ -129,30 +130,27 @@ const About = () => {
 
 
       {/* Resume*/}
-      <div className='sm:pb-32 mt-8 pb-28'>
+      <div className='sm:pb-32 sm:mt-8 pb-28'>
         <h2 className='uppercase text-3xl font-bold text-center'>experience & education</h2>
 
-        <div className='mt-16'>
-
-          <div className='md:w-1/2 w-full relative resume_item'>
-            <div>
-              <div className='bg-amber-500 w-14 h-14 rounded-full flex items-center justify-center'>
-                <MdWork className='text-xl' />
+        <div className='mt-16 grid lg:grid-cols-2 gird-cols-1 lg:px-0 px-2 gap-y-16'>
+          {ExperienceList.map((item) => (
+              <div className='w-full relative resume_item flex items-start'>
+                <div className='bg-amber-500 z-30 p-3 -ml-4 rounded-full flex items-center justify-center'>
+                  {item.icon}
+                </div>
+                <div className='sm:ml-6 ml-3 flex flex-col justify-end lg:pr-6 px-0'>
+                  <div className='bg-gray-700 w-fit px-2 py-1 rounded-xl mb-3'>
+                    <p className='uppercase text-xs font-semibold'>{item.tenure}</p>
+                  </div>
+                  <div className='w-full'>
+                    <h2 className='uppercase sm:text-xl text-lg  font-bold mb-1'>{item.designation}</h2>
+                    <p className='font-normal italic sm:text-sm text-xs pb-2 text-gray-400'>{item.company}</p>
+                    <p className='sm:text-base text-sm mb-0'>{item.desc}</p>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h2 className='uppercase font-bold text-center'>education</h2>
-              </div>
-            </div>
-
-            <div>
-              <h2 className='uppercase font-bold text-center'>experience & education</h2>
-            </div>
-          </div>
-
-          <div className='md:w-1/2 w-full'>
-
-          </div>
-
+            ))}
         </div>
 
       </div>
