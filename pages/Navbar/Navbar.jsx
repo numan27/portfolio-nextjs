@@ -30,7 +30,7 @@ const Navbar = () => {
                   'w-40': hoveredItem === index,
                   'sm:w-[53px]': hoveredItem !== index,
                   'bg-amber-500': hoveredItem === index || (router.pathname === item.link && hoveredItem === null),
-                  'bg-gray-700': hoveredItem !== index && !(router.pathname === item.link && hoveredItem === null),
+                  'bg-gray-900': hoveredItem !== index && !(router.pathname === item.link && hoveredItem === null),
                 }
               )}
               onMouseEnter={() => handleMouseEnter(index)}

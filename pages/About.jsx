@@ -140,7 +140,7 @@ const About = () => {
                   {item.icon}
                 </div>
                 <div className='sm:ml-6 ml-3 flex flex-col justify-end lg:pr-6 px-0'>
-                  <div className='bg-gray-700 w-fit px-2 py-1 rounded-xl mb-3'>
+                  <div className='bg-gray-900 w-fit px-2 py-1 rounded-xl mb-3'>
                     <p className='uppercase text-xs font-semibold'>{item.tenure}</p>
                   </div>
                   <div className='w-full'>
