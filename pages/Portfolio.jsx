@@ -33,7 +33,7 @@ const data = [
   },
   {
     label: "HTML/CSS",
-    value: "svelte",
+    value: "HTML/CSS",
     src: IMAGES.PORTFOLIO_ITEM_2,
   },
 ];
@@ -47,7 +47,6 @@ const Portfolio = () => {
     setOpen(true);
   };
 
-  // Add the "All" tab data
   const allTabData = {
     label: "All",
     value: "all",
@@ -56,7 +55,7 @@ const Portfolio = () => {
     })),
   };
 
-  // Create a new array with the "All" tab as the first item
+
   const tabsData = [allTabData, ...data];
 
   return (
@@ -88,6 +87,7 @@ const Portfolio = () => {
                             alt={item.label}
                             width={400}
                             height={200}
+                            className='cursor-pointer'
                           />
                         </div>
                       ))}
@@ -100,6 +100,7 @@ const Portfolio = () => {
                         width={400}
                         height={200}
                         onClick={() => handleOpen({ label: value, src })}
+                        className='cursor-pointer'
                       />
                     </div>
                   )}
@@ -109,26 +110,26 @@ const Portfolio = () => {
           </Tabs>
         </div>
 
-        <Dialog className='bg-gray-900 pb-4 pt-6 px-4 relative text-white xl:max-w-[40%] lg:max-w-[50%] md:max-w-[60%] sm:max-w-[85%] max-w-[78%] dialog' open={open} handler={() => setOpen(!open)}>
+        <Dialog className='bg-gray-900 sm:pb-4 sm:pt-6 pt-3 sm:px-4 px-0 relative text-white xl:max-w-[40%] lg:max-w-[50%] md:max-w-[60%] sm:max-w-[85%] max-w-[78%] dialog' open={open} handler={() => setOpen(!open)}>
           <MdOutlineCancel onClick={() => setOpen(false)} className='md:text-6xl text-4xl text-gray-400 transition-all duration-200 hover:text-white cancelIcon absolute cursor-pointer' />
-          <h2 className='text-center text-amber-500 text-3xl font-bold tracking-widest uppercase mb-3'>{selectedImage?.label}</h2>
+          <h2 className='text-center text-amber-500 sm:text-3xl text-2xl font-bold tracking-widest uppercase mb-3'>{selectedImage?.label}</h2>
 
-          <div className='p-4 grid grid-cols-2'>
+          <div className='p-4 grid md:grid-cols-2 grid-cols-1'>
 
             <div className='flex items-center mb-2'>
-              <AiOutlineProject className='text-2xl' /> <p className='mb-0 ml-2 text-lg text-gray-300'>Project: <span className='font-medium text-white'>Website</span></p>
+              <AiOutlineProject className='md:text-2xl text-xl' /> <p className='mb-0 ml-2 lg:text-lg text-base text-gray-300'>Project: <span className='font-medium text-white'>Website</span></p>
             </div>
 
             <div className='flex items-center mb-2'>
-              <AiOutlineProject className='text-2xl' /> <p className='mb-0 ml-2 text-lg text-gray-300'>Client: <span className='font-medium text-white'>Mr. XYZ</span></p>
+              <AiOutlineProject className='md:text-2xl text-xl ' /> <p className='mb-0 ml-2 lg:text-lg text-base  text-gray-300'>Client: <span className='font-medium text-white'>Mr. XYZ</span></p>
             </div>
 
             <div className='flex items-center'>
-              <BiCodeAlt className='text-2xl' /> <p className='mb-0 ml-2 text-lg text-gray-300'>Stack: <span className='font-medium text-white'>React, Tailwind CSS</span></p>
+              <BiCodeAlt className='md:text-2xl text-xl' /> <p className='md:mb-0 mb-2 ml-2 lg:text-lg text-base text-gray-300'>Stack: <span className='font-medium text-white'>React, Tailwind CSS</span></p>
             </div>
 
             <div className='flex items-center'>
-              <BiLinkExternal className='text-2xl' /> <p className='mb-0 ml-2 text-lg text-gray-300'>Preview: <Link href="" className='font-medium text-white'>www.abc123.com</Link></p>
+              <BiLinkExternal className='md:text-2xl text-xl' /> <p className='mb-0 ml-2 lg:text-lg text-base  text-gray-300'>Preview: <Link href="" className='font-medium text-white'>www.abc123.com</Link></p>
             </div>
 
           </div>
@@ -179,11 +180,6 @@ const Portfolio = () => {
                 />
             </Carousel>
             <span className='absolute bottom-0 w-full bg-gray-900 opacity-60 h-16 px-4'/>
-            {/* <Image
-              src={selectedImage?.src}
-              alt={selectedImage?.label}
-              className='w-full rounded-lg'
-            /> */}
           </DialogBody>
         </Dialog>
       </AppLayout>

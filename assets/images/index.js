@@ -3,12 +3,24 @@ import homeMain from "./home.png"
 import homeBg from "./home-bg.png"
 import portfolioItem from "./portfolio_item.png"
 import portfolioItem2 from "./portfolio_item_2.png"
+import serviceIcon1 from "./service-icon-1.png"
+import serviceIcon2 from "./service-icon-2.png"
+import serviceIcon3 from "./service-icon-3.png"
+import serviceIcon4 from "./service-icon-4.png"
+import serviceIcon5 from "./service-icon-5.png"
+import serviceIcon6 from "./service-icon-6.png"
 
 const IMAGES = {
   HOME_MAIN: homeMain,
   HOME_BG: homeBg,
   PORTFOLIO_ITEM: portfolioItem,
   PORTFOLIO_ITEM_2: portfolioItem2,
+  SERVICE_ICON_1: serviceIcon1,
+  SERVICE_ICON_2: serviceIcon2,
+  SERVICE_ICON_3: serviceIcon3,
+  SERVICE_ICON_4: serviceIcon4,
+  SERVICE_ICON_5: serviceIcon5,
+  SERVICE_ICON_6: serviceIcon6,
 
 };
 export default IMAGES;
