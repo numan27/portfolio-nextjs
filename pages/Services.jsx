@@ -11,8 +11,7 @@ const Services = () => {
       <AppLayout container={true}>
         <PageHeading titleSpan={"services"} title={"my"} backHeading={"Works"} />
 
-        <div className='h-full pb-24 mt-60 '>
-          <div className='grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 xl:gap-x-12 lg:gap-x-4 gap-x-2 md:gap-y-6 gap-y-4'>
+        <div className='h-full pb-24'>
 
             {SERVICES_LIST.map((item) => (
               <div className='w-full lg:w-full md:w-2/3 mx-auto service_item group cursor-pointer xl:p-10 p-6 rounded-xl hover:bg-gradient-to-r from-amber-500 to-amber-800 transition-all duration-500 hover:-translate-y-3 group'>
@@ -22,7 +21,6 @@ const Services = () => {
               </div>
             ))}
           </div>
-        </div>
       </AppLayout>
     </>
   );
