@@ -24,17 +24,27 @@ const data = [
   {
     label: "React",
     value: "react",
-    src: IMAGES.PORTFOLIO_ITEM_2
+    src: [
+      IMAGES.REACT_1,
+      IMAGES.REACT_2,
+      IMAGES.REACT_3,
+    ],
   },
   {
     label: "Bootstrap",
     value: "bootstrap",
-    src: IMAGES.PORTFOLIO_ITEM
+    src: [
+      IMAGES.BS_1,
+      IMAGES.BS_2,
+    ],
   },
   {
     label: "HTML/CSS",
     value: "HTML/CSS",
-    src: IMAGES.PORTFOLIO_ITEM_2,
+    src: [
+      IMAGES.HTML_1,
+      IMAGES.HTML_2,
+    ],
   },
 ];
 
@@ -46,6 +56,7 @@ const Portfolio = () => {
     setSelectedImage(image);
     setOpen(true);
   };
+
 
   const allTabData = {
     label: "All",
@@ -75,6 +86,7 @@ const Portfolio = () => {
             <TabsBody>
               {tabsData.map(({ value, src }) => (
                 <TabPanel className='px-0 flex justify-center' key={value} value={value}>
+
                   {value === "all" ? (
                     <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
                       {src.map((item) => (
@@ -83,7 +95,7 @@ const Portfolio = () => {
                           onClick={() => handleOpen(item)}
                         >
                           <Image
-                            src={item.src}
+                            src={item.src[0]} // Display the first image in the array
                             alt={item.label}
                             width={400}
                             height={200}
@@ -95,7 +107,7 @@ const Portfolio = () => {
                   ) : (
                     <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6'>
                       <Image
-                        src={src}
+                        src={src[0].src} // Display the first image in the array
                         alt={value.label}
                         width={400}
                         height={200}
@@ -104,6 +116,8 @@ const Portfolio = () => {
                       />
                     </div>
                   )}
+
+
                 </TabPanel>
               ))}
             </TabsBody>
@@ -163,23 +177,20 @@ const Portfolio = () => {
                 </IconButton>
               )}
             >
-                <Image
-                  src={selectedImage?.src}
-                  alt={selectedImage?.label}
-                  className='w-full rounded-lg object-cover'
-                />
-                <Image
-                  src={selectedImage?.src}
-                  alt={selectedImage?.label}
-                  className='w-full rounded-lg object-cover'
-                />
-                <Image
-                  src={selectedImage?.src}
-                  alt={selectedImage?.label}
-                  className='w-full rounded-lg object-cover'
-                />
+              {selectedImage && (
+                selectedImage.src.map((item) => (
+                  <Image
+                    key={item}
+                    src={item}
+                    alt={selectedImage.label}
+                    className='w-full rounded-lg object-cover'
+                  />
+                ))
+              )}
             </Carousel>
-            <span className='absolute bottom-0 w-full bg-gray-900 opacity-60 h-16 px-4'/>
+
+
+            <span className='absolute bottom-0 w-full bg-gray-900 opacity-60 h-16 px-4' />
           </DialogBody>
         </Dialog>
       </AppLayout>
