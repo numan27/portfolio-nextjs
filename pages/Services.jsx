@@ -12,15 +12,15 @@ const Services = () => {
       <AppLayout container={true}>
         <PageHeading titleSpan={"services"} title={"my"} backHeading={"Works"} />
 
-        <div className='h-screen'>
+        <div className='h-full pb-24'>
 
           <div className='grid grid-cols-3 gap-x-12 gap-y-6'>
 
           {SERVICES_LIST.map((item)=>(
-             <div className='service_item group p-10 rounded-xl hover:bg-gradient-to-r from-amber-500 to-amber-800 transition-all duration-500 hover:-translate-y-3 group'>
+             <div className='service_item group px-8 py-6 rounded-xl hover:bg-gradient-to-r from-amber-500 to-amber-800 transition-all duration-500 hover:-translate-y-3 group'>
              <Image className='serviceIcon' width={52} src={item.img} alt='service' />
-             <h2 className='text-2xl font-semibold my-6 pt-2 group-hover:text-black'>{item.title}</h2>
-             <p className='text-justify  group-hover:text-black leading-relaxed text-lg text-gray-300 group-hover:text-white'>{item.desc}</p>
+             <h2 className='text-2xl font-semibold my-4 pt-2 group-hover:text-black leading-none'>{item.title}</h2>
+             <p className='text-justify mb-0 group-hover:text-black leading-tight text-lg text-gray-300 group-hover:text-white'>{item.desc}</p>
            </div>
 
           ))}
