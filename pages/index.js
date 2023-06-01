@@ -1,10 +1,5 @@
-import IMAGES from '@/assets/images'
 import Head from 'next/head'
-import Image from 'next/image'
-// import styles from '@/styles/Home.module.css'
-// import Navbar from "./Navbar"
-import Home from "./Home"
-// import About from './About'
+import ChatBotApp from "./ChatBotApp"
 
 
 export default function Index() {
@@ -18,8 +13,7 @@ export default function Index() {
       </Head>
 
 
-      <Home />
-      {/* <About /> */}
+      <ChatBotApp />
 
     </>
   )
