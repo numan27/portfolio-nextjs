@@ -35,10 +35,6 @@ const data = [
         IMAGES.REACT_2_2,
         IMAGES.REACT_2_3,
       ],
-      [
-        IMAGES.REACT_3_1,
-        IMAGES.REACT_3_2,
-      ],
     ],
   },
   {
@@ -57,8 +53,8 @@ const data = [
     ],
   },
   {
-    label: "HTML",
-    value: "HTML",
+    label: "HTML/CSS",
+    value: "HTML/CSS",
     src: [
       [
         IMAGES.HTML_1,
@@ -77,42 +73,28 @@ const Portfolio = () => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = (image) => {
-    const { label, src } = image;
-    const srcArray = Array.isArray(src) ? src : [[src]]; // Wrap single image in an array
-    setSelectedImage({ label, src: srcArray });
+    setSelectedImage(image);
     setOpen(true);
   };
-  
   
 
   const allTabData = {
     label: "All",
     value: "all",
     src: data.flatMap((item) =>
-      item.src.flatMap((group) => group[0]) // Retrieve the first image from each group
+      item.src.flatMap((group) => group.slice(0, 1))
     ),
   };
+  
 
-
-  const tabsData = [
-    {
-      label: "All",
-      value: "all",
-      src: allTabData.src,
-    },
-    ...data.map((category) => ({
-      label: category.label,
-      value: category.value,
-      src: category.src.flatMap((group) => group[0]),
-    })),
-  ];
+  const tabsData = [allTabData, ...data];
 
   return (
     <>
       <AppLayout container={true}>
         <PageHeading titleSpan={"portfolio"} title={"my"} backHeading={"catalouge"} />
 
-        <div className='min-h-screen pb-20'>
+        <div className='h-screen'>
           <Tabs value="all">
             <TabsHeader>
               {tabsData.map(({ label, value }) => (
@@ -124,13 +106,13 @@ const Portfolio = () => {
 
             <TabsBody>
               {tabsData.map(({ value, src }) => (
-                <TabPanel className="px-0 flex justify-center max-h-full" key={value} value={value}>
+                <TabPanel className="px-0 flex justify-center" key={value} value={value}>
                   <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
-                    {src.map((image, index) => (
-                      <div className='max-h-screen' key={index} onClick={() => handleOpen({ label: value, src: image })}>
+                    {src.map((imageGroup, groupIndex) => (
+                      <div key={groupIndex} onClick={() => handleOpen({ label: value, src: imageGroup })}>
                         <Image
-                          src={image}
-                          alt={value}
+                          src={imageGroup[0]} // Display the first image from each group
+                          alt={value} // Fixed typo: changed `value.label` to `value`
                           width={400}
                           height={200}
                           className="cursor-pointer"
@@ -141,7 +123,6 @@ const Portfolio = () => {
                 </TabPanel>
               ))}
             </TabsBody>
-
           </Tabs>
         </div>
 
@@ -165,49 +146,46 @@ const Portfolio = () => {
           </div>
 
           <DialogBody className='relative'>
-            {selectedImage && (
-              <Carousel
-                loop
-                autoplay
-                className="rounded-xl"
-                prevArrow={({ handlePrev }) => (
-                  <IconButton
-                    variant="text"
-                    color="white"
-                    size="lg"
-                    onClick={handlePrev}
-                    className="!absolute top-2/4 -translate-y-2/4 left-4"
-                  >
-                    <BsArrowLeft strokeWidth={2} className="w-6 h-6" />
-                  </IconButton>
-                )}
-                nextArrow={({ handleNext }) => (
-                  <IconButton
-                    variant="text"
-                    color="white"
-                    size="lg"
-                    onClick={handleNext}
-                    className="!absolute top-2/4 -translate-y-2/4 !right-4"
-                  >
-                    <BsArrowRight strokeWidth={2} className="w-6 h-6" />
-                  </IconButton>
-                )}
-              >
-                {selectedImage.src.flatMap((group) =>
-                  group.map((item, index) => (
-                    <Image
-                      key={index}
-                      src={item}
-                      alt={selectedImage.label}
-                      className="w-full rounded-lg object-cover"
-                    />
-                  ))
-                )}
-              </Carousel>
-            )}
+            <Carousel
+              loop
+              autoplay
+              className="rounded-xl"
+              prevArrow={({ handlePrev }) => (
+                <IconButton
+                  variant="text"
+                  color="white"
+                  size="lg"
+                  onClick={handlePrev}
+                  className="!absolute top-2/4 -translate-y-2/4 left-4"
+                >
+                  <BsArrowLeft strokeWidth={2} className="w-6 h-6" />
+                </IconButton>
+              )}
+              nextArrow={({ handleNext }) => (
+                <IconButton
+                  variant="text"
+                  color="white"
+                  size="lg"
+                  onClick={handleNext}
+                  className="!absolute top-2/4 -translate-y-2/4 !right-4"
+                >
+                  <BsArrowRight strokeWidth={2} className="w-6 h-6" />
+                </IconButton>
+              )}
+            >
+              {selectedImage &&
+                selectedImage.src.map((item) => (
+                  <Image
+                    key={item}
+                    src={item}
+                    alt={selectedImage.label}
+                    className='w-full rounded-lg object-cover'
+                  />
+                ))}
+            </Carousel>
+
             <span className='absolute bottom-0 w-full bg-gray-900 opacity-60 h-16 px-4' />
           </DialogBody>
-
         </Dialog>
       </AppLayout>
     </>

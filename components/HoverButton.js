@@ -16,10 +16,10 @@ const ArrowButton = ({text}) => {
     return (
         <button
             className={classnames(
-                'group relative inline-flex items-center rounded-full px-6 py-3 transition-all duration-500',
+                'group relative inline-flex items-center rounded-full sm:px-6 px-0 md:py-2 py-1 transition-all duration-500',
                 {
                     'bg-amber-500': isHovered,
-                    'bg-gray-700': !isHovered,
+                    'bg-black': !isHovered,
                 }
             )}
             onMouseEnter={handleMouseEnter}
@@ -27,7 +27,7 @@ const ArrowButton = ({text}) => {
         >
 
             <FiArrowLeft
-                size={20}
+                size={16}
                 className={classnames(
                     'text-white transition-all duration-500 absolute left-0 top-0 rounded-full h-full',
                     {
@@ -38,7 +38,7 @@ const ArrowButton = ({text}) => {
             />
 
             <span
-                className='text-white px-8 text-xl font-semibold py-1'
+                className='text-white md:px-8 sm:px-4 px-2 text-xl font-semibold py-1'
             >
                 {text}
             </span>
