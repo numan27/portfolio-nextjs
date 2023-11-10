@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import classnames from 'classnames';
+import Link from 'next/link';
 
-const ArrowButton = ({text}) => {
+const ArrowButton = ({ text, path }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -14,35 +15,38 @@ const ArrowButton = ({text}) => {
     };
 
     return (
-        <button
-            className={classnames(
-                'group relative inline-flex items-center rounded-full sm:px-6 px-0 md:py-2 py-1 transition-all duration-500',
-                {
-                    'bg-amber-500': isHovered,
-                    'bg-black': !isHovered,
-                }
-            )}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
+        <Link
+        href={path}
         >
-
-            <FiArrowLeft
-                size={16}
+            <button
                 className={classnames(
-                    'text-white transition-all duration-500 absolute left-0 top-0 rounded-full h-full',
+                    'group relative inline-flex items-center rounded-lg sm:px-6 px-0 md:py-2 transition-all duration-500',
                     {
-                        'bg-amber-500 w-0': isHovered,
-                        'bg-amber-500 w-full': !isHovered,
+                        'bg-[#0C3A53]': isHovered,
+                        'bg-black': !isHovered,
                     }
                 )}
-            />
-
-            <span
-                className='text-white md:px-8 sm:px-4 px-2 text-xl font-semibold py-1'
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
             >
-                {text}
-            </span>
-        </button>
+
+                <FiArrowLeft
+                    className={classnames(
+                        'text-white transition-all duration-500 absolute left-0 top-0 rounded-lg h-full',
+                        {
+                            'bg-[#0C3A53]  w-0': isHovered,
+                            'bg-[#0EBBB2] w-full': !isHovered,
+                        }
+                    )}
+                />
+
+                <span
+                    className='text-white md:px-8 sm:px-4 px-2 text-xl font-semibold py-0.5'
+                >
+                    {text}
+                </span>
+            </button>
+        </Link>
     );
 };
 

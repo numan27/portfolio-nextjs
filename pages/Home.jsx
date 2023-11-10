@@ -9,30 +9,47 @@ const Home = () => {
     return (
 
         <AppLayout>
-            <div className='h-screen'>
-                <div className='w-full flex lg:flex-row flex-col-reverse h-full lg:justify-start justify-center'>
-                    <div className='lg:w-2/3 w-full flex items-center justify-center lg:mb-0 mb-40'>
-                        <div className='textCapital lg:text-left text-center flex flex-col items-center justify-center xl:px-40 md:px-28 sm:px-16 px-8'>
-                            <h1 className='text-amber-500 font-bold xl:text-5xl md:text-4xl flex items-center'> <AiOutlineLine className='mr-4' /> I'M NUMAN KHALIL</h1>
-                            <h1 className='text-white font-extrabold xl:text-5xl md:text-4xl flex my-4 pl-4'>WEB DEVELOPER</h1>
-                            <h3 className='text-white font-semibold xl:text-2xl md:text-xl flex xl:pl-32 md:pl-16 normal-case'>I'm a self-taught and passionate front-end developer who always eager to learn new things</h3>
-                            <div className='mt-4 flex justify-start'>
-                                <ArrowButton text={"VISIT PORTFOLIO"} />
+            <div className='h-screen accordion-collapse'>
+                <div className='w-full flex md:flex-row flex-col-reverse h-full lg:justify-start justify-center'>
+                    <div className='md:w-3/6 w-full flex items-center md:justify-start'>
+                        <div className='textCapital text-teal-900 flex flex-col md:items-start items-center md:justify-start justify-center xl:px-36 lg:pl-28 md:pl-8 px-8 mb-8 sm:mb-0'>
+                            <h1 className='text-[#0EBBB2] font-bold xl:text-4xl md:text-3xl text-xl flex items-center'>
+                                Hi ! I'm a
+                            </h1>
+                            <h1 className='font-extrabold md:text-left text-center xl:text-4xl md:text-3xl my-4 uppercase text-xl'>
+                                Web Developer <span className='text-[#0EBBB2]'>&</span> Web Designer
+                            </h1>
+                            <h3 className='font-semibold xl:text-xl md:text-lg normal-case tracking-wider text-center md:text-left'>
+                            Code and Creativity Unleashed: Explore my diverse experience as a web developer and designer.
+                            </h3>
+                            <div className='mt-6 flex md:justify-start'>
+                                <ArrowButton path={"/Portfolio"} text={"VISIT PORTFOLIO"} />
                             </div>
                         </div>
                     </div>
-                    <div className='lg:w-1/3 w-full z-30 p-10 lg:mb-0 mb-48 flex lg:items-start lg:justify-end justify-center'>
-                        <Image
-                            src={IMAGES.HOME_MAIN}
-                            alt="home"
-                            className='lg:w-1/3 w-96 rounded-3xl mainImg'
-                            // width={1920}
-                            // height={600}
-                            priority
-                        />
+
+                    <div className='md:w-3/6 w-full flex items-center justify-center'>
+                        <div className='md:w-3/4 sm:w-1/4 w-60'>
+                            <Image
+                                src={IMAGES.BANNER}
+                                alt="home"
+                                className=''
+                                priority
+                            />
+                        </div>
                     </div>
+                    {/* <div className='lg:w-3/6 w-full z-30 p-10 lg:mb-0 mb-40 flex lg:justify-end justify-center'>
+                        <div className='lg:w-1/2 w-96 flex lg:items-start lg:justify-end -mt-4 justify-center bg-[#0EBBB2] lg:pr-6 lg:pt-6 rounded-lg h-full'>
+                            <Image
+                                src={IMAGES.BANNER}
+                                alt="home"
+                                className='rounded-lg mainImg'
+                                priority
+                            />
+                        </div>
+                    </div> */}
                 </div>
-                <div className='z-0 slanted hidden lg:block bg-amber-500 h-full' />
+                {/* <div className='z-0 slanted hidden lg:block bg-amber-500 h-full' /> */}
             </div>
         </AppLayout>
     )

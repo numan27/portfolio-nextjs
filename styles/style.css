@@ -17,20 +17,20 @@ h5 {
    background-color: #333333;
 }
 
-.slanted{
+/* .slanted{
    position: fixed;
    height: 200%;
    width: 100%;
    transform: rotate(15deg);
    right: -83%;
    top: -50%;
-}
-.mainImg{
+} */
+/* .mainImg{
    position: fixed;
    top: 30;
    height: 89%;
    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+} */
 .skillCircle{
    transform: rotate(180deg);
 }
@@ -45,8 +45,8 @@ h5 {
  }
 
 .cancelIcon{
-   top: -48px;
-   right: -48px;
+   top: -40px;
+   right: -40px;
 }
 
 .backdrop-blur-sm {
@@ -57,13 +57,27 @@ h5 {
 }
 
 .serviceIcon{
-   filter: invert(69%) sepia(93%) saturate(552%) hue-rotate(354deg) brightness(95%) contrast(98%);
+   filter: invert(49%) sepia(74%) saturate(2798%) hue-rotate(144deg) brightness(106%) contrast(89%);
 }
 .service_item:hover .serviceIcon{
-   filter: invert(0);
-   /* filter: invert(100%) sepia(0%) saturate(7460%) hue-rotate(296deg) brightness(114%) contrast(100%); */
+   filter: invert(100%);
 }
 
+.custom_shadow{
+   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+input, textarea:focus{
+   outline: none;
+}
+/* .tabsList:focus,
+.tabsList:active {
+   background-color: #0EBBB2 !important;
+} */
+.customDiv{
+   position: absolute !important;
+   background-color: #0EBBB2 !important;
+}
 
 /*  */
 
@@ -79,6 +93,12 @@ h5 {
       top: -40px;
       right: -5px;
    }
+}
+@media screen and (max-width: 576px) {
+  .tabs_ul{
+   display: flex;
+   flex-wrap: wrap;
+  }
 }
 
 
