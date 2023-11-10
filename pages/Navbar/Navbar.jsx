@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
-import NAV_LIST from './NavList';
+import NAV_LIST from '../../components/JSON/NavList';
 import Link from 'next/link';
 import classnames from 'classnames';
 import Tooltip from './Tooltip';

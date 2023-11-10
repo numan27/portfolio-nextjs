@@ -15,7 +15,7 @@ import {
   DialogBody,
 } from '@material-tailwind/react';
 import Link from 'next/link';
-import PortfolioList from './JSON/PortfolioList';
+import PortfolioList from '../components/JSON/PortfolioList';
 
 
 const Portfolio = () => {
@@ -147,38 +147,41 @@ const Portfolio = () => {
           <DialogBody className=''>
             {selectedImage && (
               <div key={selectedImage.value}>
-                <h2 className='text-center text-[#0EBBB2] sm:text-2xl text-xl font-bold tracking-widest uppercase mb-3'>
+                <h2 className='text-center text-[#0EBBB2] sm:text-2xl text-normal font-bold tracking-widest uppercase mb-3'>
                   {selectedImage.label}
                 </h2>
                 {/* Related info */}
-                <div className='py-4 px-2 grid md:grid-cols-2 grid-cols-1'>
-                 
-                  <div className='flex items-center mb-2'>
+                <div className='py-4 px-2'>
+                  <div className='grid md:grid-cols-2 grid-cols-1'>
+                    {/* <div className='flex items-center mb-2'>
                     <BiCodeAlt className='md:text-2xl text-xl' />{' '}
                     <p className='mb-0 ml-2 lg:text-md text-base text-gray-300'>
                       Tech Stack:
                     </p>
-                  </div>
-                  <div className='flex items-center mb-2'>
-                    <AiOutlineProject className='md:text-2xl text-xl ' />{' '}
-                    <p className='mb-0 ml-2 lg:text-md text-base text-gray-300'>
-                      Platform: <span className='font-medium text-sm text-white'>{selectedImage.client}</span>
-                    </p>
-                  </div>
-                 
-                  <div className='flex items-center'>
-                    <p className='md:mb-0 mb-2 ml-8 lg:text-md text-base text-gray-300'>
-                      <span className='font-medium text-sm  text-white'>{selectedImage.stack}</span>
-                    </p>
+                  </div> */}
+                    <div className='flex items-center mb-2'>
+                      <AiOutlineProject className='md:text-2xl text-xl ' />{' '}
+                      <p className='mb-0 ml-2 lg:text-md text-base text-gray-300'>
+                        Platform/ Client: <span className='font-medium text-sm text-white'>{selectedImage.client}</span>
+                      </p>
+                    </div>
+
+                    <div className=''>
+                      <Link target='_blank' href={selectedImage.previewLink || ''} className='hover:underline outline-0 flex items-center gap-2 font-medium text-sm text-white'>
+                        <BiLinkExternal className='md:text-2xl text-xl text-blue-gray-500' />{' '}
+                        Live Preview
+                      </Link>
+                    </div>
                   </div>
 
-                  <div className=''>
-                    <Link target='_blank' href={selectedImage.previewLink || ''} className='hover:underline outline-0 flex items-center gap-2 font-medium text-sm text-white'>
-                      <BiLinkExternal className='md:text-2xl text-xl text-blue-gray-500' />{' '}
-                      Live Preview
-                    </Link>
+                  <div className='flex items-start mt-2'>
+                    <div className='w-8 flex justify-start'>
+                    <BiCodeAlt className='md:text-2xl text-xl' />{' '}
+                    </div>
+                    <p className='md:mb-0 mb-2 lg:text-md text-base text-gray-300'>
+                      Tech Stack: <span className='font-medium ml-2 text-sm text-white'>{selectedImage.stack}</span>
+                    </p>
                   </div>
-
                 </div>
 
                 <div className='relative group'>
@@ -188,7 +191,7 @@ const Portfolio = () => {
                     className='w-full h-auto h-full rounded-lg object-cover'
                   />
                   <div className='flex h-full items-center justify-center absolute w-full inset-0 bg-gray-900 opacity-0 px-4 transition-opacity duration-300 group-hover:opacity-90'>
-                    <span className="text-white text-center text-lg">
+                    <span className="text-white text-center md:text-lg sm:text-base text-xs">
                       {selectedImage.description}
                     </span>
                   </div>

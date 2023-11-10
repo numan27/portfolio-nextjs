@@ -2,7 +2,7 @@ import React from 'react';
 import AppLayout from '@/components/AppLayout/AppLayout';
 import PageHeading from '@/components/PageHeading';
 import Image from 'next/image';
-import SERVICES_LIST from './JSON/ServicesList';
+import SERVICES_LIST from '../components/JSON/ServicesList';
 
 const Services = () => {
 

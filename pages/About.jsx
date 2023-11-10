@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { TiSocialFacebook, TiSocialGithub, TiSocialLinkedin, TiSocialSkype } from "react-icons/ti"
 import { SiFiverr, SiFreelancer, SiUpwork } from "react-icons/si"
 import { ImDownload } from "react-icons/im"
-import ExperienceList from './About/ExperienceList';
+import ExperienceList from '../components/JSON/ExperienceList';
 import { AiOutlineLine } from 'react-icons/ai';
 
 const stacks = [
