@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import AppLayout from '@/components/AppLayout/AppLayout';
-import PageHeading from '@/components/PageHeading';
+import AppLayout from '/components/AppLayout/AppLayout';
+import PageHeading from '/components/PageHeading';
 import { MdOutlineCancel } from 'react-icons/md';
 import { AiOutlineProject } from 'react-icons/ai';
 import { BiCodeAlt, BiLinkExternal } from 'react-icons/bi';

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import classnames from 'classnames';
 import Tooltip from './Tooltip';
 import Image from 'next/image';
-import IMAGES from '@/assets/images';
+import IMAGES from '/assets/images';
 
 const Navbar = () => {
   const router = useRouter();

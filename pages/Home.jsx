@@ -2,8 +2,8 @@ import React from 'react'
 import Image from 'next/image.js'
 import { AiOutlineLine } from "react-icons/ai"
 import IMAGES from "../assets/images/index.js"
-import AppLayout from '@/components/AppLayout/AppLayout.jsx'
-import ArrowButton from '@/components/HoverButton.js'
+import AppLayout from '/components/AppLayout/AppLayout.jsx'
+import ArrowButton from '/components/HoverButton.js'
 
 const Home = () => {
     return (

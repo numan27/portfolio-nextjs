@@ -1,12 +1,12 @@
 import React from 'react';
-import AppLayout from '@/components/AppLayout/AppLayout';
-import PageHeading from '@/components/PageHeading';
+import AppLayout from '/components/AppLayout/AppLayout';
+import PageHeading from '/components/PageHeading';
 import { MdDoneAll, MdEmail } from 'react-icons/md';
 import { FaPhoneSquareAlt } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TiSocialFacebook, TiSocialGithub, TiSocialLinkedin, TiSocialSkype } from 'react-icons/ti';
-import IMAGES from '@/assets/images';
+import IMAGES from '/assets/images';
 
 const Contact = () => {
 

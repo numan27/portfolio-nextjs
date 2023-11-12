@@ -1,4 +1,4 @@
-import Navbar from '@/pages/Navbar/Navbar'
+import Navbar from '/pages/Navbar/Navbar'
 import React from 'react'
 
 const AppLayout = ({ children, container }) => {

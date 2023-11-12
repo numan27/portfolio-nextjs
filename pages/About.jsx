@@ -1,5 +1,5 @@
-import AppLayout from '@/components/AppLayout/AppLayout';
-import PageHeading from '@/components/PageHeading';
+import AppLayout from '/components/AppLayout/AppLayout';
+import PageHeading from '/components/PageHeading';
 import Link from 'next/link';
 import { TiSocialFacebook, TiSocialGithub, TiSocialLinkedin, TiSocialSkype } from "react-icons/ti"
 import { SiFiverr, SiFreelancer, SiUpwork } from "react-icons/si"
